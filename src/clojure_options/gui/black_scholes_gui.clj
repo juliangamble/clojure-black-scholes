@@ -27,7 +27,9 @@
    [clojure.contrib.miglayout :only (miglayout components)])
   (:require
    [clojure.contrib.miglayout :as mig]
-   [clojure-options.black-scholes :as bs]))
+   [clojure-options.black-scholes :as bs])
+  (:gen-class
+    :main main))
 
 (def *trading-days-per-year* 251)
 
@@ -227,7 +229,7 @@
     ))
 
 
-(defn main
+(defn -main
   []
   (do-swing* :now initialize-gui))
 
